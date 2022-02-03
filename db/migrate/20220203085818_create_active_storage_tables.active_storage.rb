@@ -2,8 +2,8 @@
 class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
   def change
     create_table :active_storage_blobs do |t|
-      t.string   :key,          null: false
-      t.string   :filename,     null: false
+      t.string   :key,          null: true
+      t.string   :filename,     null: true
       t.string   :content_type
       t.text     :metadata
       t.string   :service_name, null: false
@@ -15,9 +15,9 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
     end
 
     create_table :active_storage_attachments do |t|
-      t.string     :name,     null: false
-      t.references :record,   null: false, polymorphic: true, index: false
-      t.references :blob,     null: false
+      t.string     :name,     null: true
+      t.references :record,   null: true, polymorphic: true, index: false
+      t.references :blob,     null: true
 
       t.datetime :created_at, null: false
 
@@ -26,8 +26,8 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
     end
 
     create_table :active_storage_variant_records do |t|
-      t.belongs_to :blob, null: false, index: false
-      t.string :variation_digest, null: false
+      t.belongs_to :blob, null: true, index: false
+      t.string :variation_digest, null: true
 
       t.index %i[ blob_id variation_digest ], name: "index_active_storage_variant_records_uniqueness", unique: true
       t.foreign_key :active_storage_blobs, column: :blob_id
