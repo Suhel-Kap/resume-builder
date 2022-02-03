@@ -7,7 +7,6 @@ class Profile < ApplicationRecord
 
     has_one_attached :avatar
 
-    before_save :set_profile
 
     belongs_to :user, optional: true
 
@@ -19,8 +18,4 @@ class Profile < ApplicationRecord
         experience[:company].blank? or experience[:position].blank?
     end
 
-    private
-    def set_profile
-        profile.id = '1' if profile.id.nil?
-    end
 end
