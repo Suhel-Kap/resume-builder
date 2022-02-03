@@ -77,10 +77,13 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
-#
+
 production:
-  <<: *default
-  database: <%= ENV["PRODUCTION_DB_NAME"] %>
-  username: <%= ENV["PRODUCTION_DB_USERNAME"] %>
-  password: <%= Rails.application.credentials.gcp[:db_password] %>
-  host: "<%= ENV.fetch("DB_SOCKET_DIR") { '/cloudsql' } %>/<%= ENV["CLOUD_SQL_CONNECTION_NAME"] %>"
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: "suhel"
+  password: "EgfjpOpQYXHbhyVkSUBvrUdqYCdgmaPvPuFSoaXPNFVZZxtRZv"
+  database: "resume_builder"
+  host:   "/cloudsql/flexiple-ruby-project:us-central1:flexiple"
