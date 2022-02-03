@@ -23,7 +23,7 @@ steps:
 substitutions:
   _REGION: us-central1
   _SERVICE_NAME: resume_builder
-  _INSTANCE_NAME: resume_builder
+  _INSTANCE_NAME: flexiple
   _SECRET_NAME: RAILS_SECRET_NAME
 
 availableSecrets:
