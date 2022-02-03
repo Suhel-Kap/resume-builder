@@ -21,6 +21,6 @@ class Profile < ApplicationRecord
 
     private
     def set_profile
-        user.profile_id = '1' if user.profile_id.nil?
+        profile.id = '1' if profile.id.nil?
     end
 end
