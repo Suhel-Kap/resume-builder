@@ -79,11 +79,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  timeout: 5000
-  username: "suhel"
-  password: "EgfjpOpQYXHbhyVkSUBvrUdqYCdgmaPvPuFSoaXPNFVZZxtRZv"
-  database: "resume_builder"
-  host:   "/cloudsql/flexiple-ruby-project:us-central1:flexiple"
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
