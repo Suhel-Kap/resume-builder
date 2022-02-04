@@ -40,6 +40,13 @@
             
         <% end %>
 
+        <%= render 'shared/edit_section', title: "Experience" do %>
+            <%= f.fields_for :experiences do |experience| %>
+                <%= render 'shared/input/experience', experience: experience %>
+            <% end %><br />
+            <%= render 'shared/input/buttons/add', label: "+ Add Experience", path: "/experience/new" %>
+        <% end %>
+
         <%= render 'shared/edit_section', title: "Education" do %>
             <%= f.fields_for :educations do |education| %>
                 <%= render 'shared/input/education', education: education %>

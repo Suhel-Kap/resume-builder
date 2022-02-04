@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   resources :profiles
   resources :educations , only: [:new]
+  resources :experiences , only: [:new]
 end
